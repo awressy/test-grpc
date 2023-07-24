@@ -4,13 +4,14 @@ const protoLoader = require('@grpc/proto-loader');
 const packageDefinition = protoLoader.loadSync('./models/helloworld.proto', {});
 const appProto = grpc.loadPackageDefinition(packageDefinition).helloworld;
 const serviceApp_url = 'localhost:4002'
-// const serviceApp_url = '127.0.0.1:5001/checkque-app/us-central1/grpcServera'
+// const serviceApp_url = '34.101.113.212:4002'
+// const serviceApp_url = 'us-central1-checkque-app.cloudfunctions.net/grpcServer'
 
 
 const client = new appProto.Greeter(serviceApp_url, grpc.credentials.createInsecure());
 
 data = {
-	name: "porka"
+	name: "asu kabeh"
 }
 
 client.SayHello(data, (err, res) => {
