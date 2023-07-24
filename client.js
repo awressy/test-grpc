@@ -3,7 +3,7 @@ const protoLoader = require('@grpc/proto-loader');
 
 const packageDefinition = protoLoader.loadSync('./models/helloworld.proto', {});
 const appProto = grpc.loadPackageDefinition(packageDefinition).helloworld;
-const serviceApp_url = 'localhost:4002'
+const serviceApp_url = 'localhost:3000'
 // const serviceApp_url = '34.101.113.212:4002'
 // const serviceApp_url = 'us-central1-checkque-app.cloudfunctions.net/grpcServer'
 
