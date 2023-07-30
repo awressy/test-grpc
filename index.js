@@ -15,9 +15,13 @@ const handler = (call, cb) => {
 const server = new grpc.Server();
 server.addService(helloworld.Greeter.service, { 'SayHello': handler });
 
-const port = `0.0.0.0:${process.env.PORT}` || '0.0.0.0:3000'
+const preport = process.env.PORT || 3000
+
+const port = `0.0.0.0:${preport}`
+
+console.log(port);
 
 server.bindAsync(port, grpc.ServerCredentials.createInsecure(), () => {
-	console.log(`Server running at http://${port}`);
+	console.log(`Server running at ${port}`);
 	server.start();
 });
